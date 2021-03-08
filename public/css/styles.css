@@ -1,0 +1,112 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size:16px;
+}
+
+input {
+    font-size:14px;
+}
+
+body {
+    line-height: 1.4;
+    color:#333333;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+label {
+    display:block;
+    font-size:14px;
+    margin-bottom: 8px;
+    color:#777;
+}
+input {
+    border:1px solid #eeeeee;
+    padding:12px;
+    outline:none;
+}
+button {
+    cursor:pointer;
+    padding:12px;
+    background:#7C5CBF;
+    border:none;
+    color:white;
+    font-size:16px;
+    transition:background .3s ease;
+}
+.chat {
+    display:flex;
+}
+
+.chat__sidebar {
+    height:100vh;
+    color:white;
+    background:#333744;
+    width:225px;
+    overflow-y:scroll
+}
+
+.chat__main {
+    flex-grow: 1;
+    display:flex;
+    flex-direction: column;
+    max-height: 100vh;
+}
+
+.chat__messages{
+    flex-grow: 1;
+    padding:24px 24px 0 24px;
+    overflow-y:scroll;
+    font-size: 14px;
+}
+
+.compose{
+    display:flex;
+    flex-shrink: 0;
+    margin-top:16px;
+    padding:24px;
+}
+.compose form{
+    display:flex;
+    flex-grow: 1;
+    margin-right:16px
+}
+.compose input{
+    border:1px solid #eeeeee;
+    width:100%;
+    padding:12px;
+    margin:0 16px 0 0;
+    flex-grow:1
+}
+.compose button{
+    font-size:14px;
+}
+
+.centered-form{
+    background:#333744;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.centered-form__box{
+    box-shadow: 0px 0px 17px #1D1F26;
+    background:#F7F7FA;
+    padding:24px;
+    width:300px;
+}
+
+.centered-form button{
+    width:100%;
+}
+.centered-form input{
+    margin-bottom:16px;
+    width:100%
+}
