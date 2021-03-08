@@ -1,6 +1,6 @@
 const users = []
 
-const adduser = ({id,username,room})=>{
+const adduser = ({id,username,room})=>{ 
     console.log({id,username,room})
     username = username.trim().toLowerCase()
     room = room.trim().toLowerCase()
