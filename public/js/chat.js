@@ -15,10 +15,8 @@ const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML
 //options
 
 const {username,room} = Qs.parse(location.search,{ignoreQueryPrefix:true})
-console.log(room)
 
 socket.on('message',(msg)=>{
-    console.log(msg.text)
     const html = Mustache.render(messageTemplate,{
         username:msg.username,
         message:msg.text,
@@ -29,7 +27,6 @@ socket.on('message',(msg)=>{
 })
 
 socket.on('location',(location)=>{
-    console.log(location)
     const html = Mustache.render(locationTeamplate,{
         username:location.username,
         url:location.url,
@@ -55,7 +52,7 @@ $messageForm.addEventListener('submit',(e)=>{
         $messageFormButton.removeAttribute('disabled')
         $messageFormInput.value = ''
         $messageFormInput.focus()
-        console.log("message was delivered",msg)
+        //console.log("message was delivered",msg)
 
 
     })
@@ -69,14 +66,14 @@ $locationButton.addEventListener('click',(e)=>{
     $locationButton.setAttribute('disabled','disabled')
 
     navigator.geolocation.getCurrentPosition((position)=>{
-        console.log(position)
+        //console.log(position)
         $locationButton.removeAttribute('disabled')
         socket.emit('sendLocation',{
             latitude:position.coords.latitude,
             longitude:position.coords.longitude
         },()=>{
             $locationButton.removeAttribute('disabled')
-            console.log("location shared")
+           // console.log("location shared")
         })
 
     })
